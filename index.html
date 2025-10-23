@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>José Eduardo Pinheiro — Palestras sobre Mercado Financeiro para Empresas e Universidades</title>
+  <meta name="description" content="Palestras com autoridade sobre investimentos e educação financeira para empresas e universidades. Agende pelo WhatsApp e transforme o conhecimento do seu time." />
+  <meta name="theme-color" content="#000000" />
+
+  <meta property="og:title" content="José Eduardo Pinheiro — Palestras sobre Mercado Financeiro" />
+  <meta property="og:description" content="Palestras com autoridade sobre investimentos e educação financeira para empresas e universidades. Agende pelo WhatsApp." />
+  <meta property="og:image" content="/assets/jose-eduardo-hero.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-red: #D00028;
+      --brand-red-dark: #7A0014;
+      --bg-dark: #050505;
+      --gray-dark: #121212;
+      --gray-mid: #2C2C2C;
+      --white: #FFFFFF;
+      --max-width: 1200px;
+      --radius: 14px;
+      --glass: rgba(255,255,255,0.04);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", "Roboto", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at top right, rgba(208,0,40,0.22), transparent 45%),
+                  linear-gradient(180deg, #050505 0%, #080000 100%);
+      color: var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    h1,h2,h3,h4{font-family:"Inter","Roboto",sans-serif;font-weight:700;letter-spacing:-0.01em;margin:0}
+    a{color:inherit}
+    img{max-width:100%;height:auto;display:block;border-radius:var(--radius)}
+
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+
+    header.site-header{
+      position:fixed;left:0;right:0;top:0;
+      background: linear-gradient(180deg, rgba(5,5,5,0.9), rgba(5,5,5,0.55));
+      backdrop-filter: blur(8px);
+      z-index:60;
+      border-bottom:1px solid rgba(255,255,255,0.04);
+    }
+    .site-header .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .logo{font-weight:800;font-size:18px;letter-spacing:0.2px}
+    .main-nav{display:flex;gap:20px;align-items:center}
+    .main-nav a{font-size:15px;color:rgba(255,255,255,0.9);text-decoration:none;padding:8px 10px;border-radius:10px;transition:background .15s ease,color .15s ease}
+    .main-nav a:hover{background:rgba(208,0,40,0.12);color:var(--white)}
+
+    .mobile-toggle{display:none;background:transparent;border:0;color:var(--white);font-size:22px}
+
+    .hero{
+      padding:120px 0 70px;
+      position:relative;
+      overflow:hidden;
+      min-height:540px;
+      display:flex;
+      align-items:center;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at 20% 30%, rgba(208,0,40,0.25), transparent 55%);
+      pointer-events:none;
+      mix-blend-mode:screen;
+    }
+    .hero-inner{display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;align-items:center;width:100%;max-width:var(--max-width);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+    .hero-copy h1{
+      font-size:46px;
+      line-height:1.04;
+    }
+    @media(min-width:1200px){.hero-copy h1{font-size:60px}}
+    .hero-copy p{color:rgba(255,255,255,0.88);margin:18px 0 28px;font-size:18px;max-width:520px}
+
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;transition:transform .12s ease, box-shadow .12s ease, background .12s ease}
+    .btn-primary{
+      background: linear-gradient(90deg, var(--brand-red), var(--brand-red-dark));
+      color:var(--white);
+      box-shadow:0 14px 40px rgba(208,0,40,0.35);
+    }
+    .btn-primary:hover{transform:translateY(-3px)}
+    .btn-secondary{background:transparent;border:1px solid rgba(255,255,255,0.14);color:var(--white)}
+
+    .hero-image{justify-self:end;max-width:520px;background:linear-gradient(160deg, rgba(208,0,40,0.4), rgba(5,5,5,0.8));padding:12px;border-radius:calc(var(--radius) + 6px);box-shadow:0 14px 60px rgba(0,0,0,0.65)}
+
+    .chips{display:flex;gap:12px;margin:34px 0 0;flex-wrap:wrap}
+    .chip{background:rgba(208,0,40,0.18);padding:10px 16px;border-radius:999px;font-weight:600;font-size:14px;color:rgba(255,255,255,0.95);border:1px solid rgba(208,0,40,0.35)}
+
+    section{padding:60px 0;border-top:1px solid rgba(255,255,255,0.04)}
+    section:nth-of-type(odd){background:rgba(5,5,5,0.3)}
+    h2.section-title{font-size:32px;margin-bottom:16px}
+    p.lead{color:rgba(255,255,255,0.84);margin:0 0 22px;font-size:18px;max-width:740px}
+
+    .highlight-card{display:flex;gap:18px;flex-wrap:wrap}
+    .highlight-card figure{flex:1 1 260px;margin:0;background:linear-gradient(160deg, rgba(208,0,40,0.45), rgba(10,10,10,0.8));padding:12px;border-radius:calc(var(--radius) + 4px);box-shadow:0 12px 40px rgba(0,0,0,0.55)}
+    .highlight-card figure img{width:100%;height:100%;object-fit:cover}
+    .highlight-card figure figcaption{margin-top:10px;font-size:14px;color:rgba(255,255,255,0.78)}
+
+    .cards{display:grid;grid-template-columns:1fr;gap:20px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.15));
+      padding:22px;border-radius:var(--radius);
+      box-shadow:0 12px 40px rgba(0,0,0,0.55);
+      border:1px solid rgba(208,0,40,0.18);
+    }
+    .card h3{font-size:20px;margin-bottom:8px}
+    .card .meta{font-size:13px;color:rgba(255,255,255,0.62);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.04em}
+    .card p{margin:0;color:rgba(255,255,255,0.9)}
+
+    @media(min-width:769px){
+      .cards{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(min-width:1200px){
+      .hero-inner{grid-template-columns:1fr 0.9fr}
+      .cards{grid-template-columns:repeat(3,1fr)}
+    }
+
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+    .gallery .item{background:linear-gradient(200deg, rgba(208,0,40,0.22), rgba(10,10,10,0.9));padding:10px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+    .gallery .item img{width:100%;height:100%;object-fit:cover}
+
+    .contact-cta{display:flex;flex-direction:column;gap:16px;max-width:560px}
+    .contact-cta p{margin:0;color:rgba(255,255,255,0.85)}
+
+    footer{padding:32px 0;color:rgba(255,255,255,0.72);font-size:14px;background:rgba(0,0,0,0.7);border-top:1px solid rgba(255,255,255,0.04)}
+    footer .foot-inner{display:flex;flex-direction:column;gap:14px;align-items:center}
+    @media(min-width:769px){ footer .foot-inner{flex-direction:row;justify-content:space-between}}
+
+    @media(max-width:560px){
+      .hero-inner{grid-template-columns:1fr;gap:26px}
+      .hero-image{justify-self:center;width:100%}
+      .mobile-toggle{display:inline-block}
+      .main-nav{display:none}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://seusite.com/#jepinheiro",
+        "name": "José Eduardo da Silva Pinheiro",
+        "jobTitle": "Palestrante sobre Mercado Financeiro",
+        "url": "https://seusite.com",
+        "sameAs": [],
+        "description": "Palestras sobre renda fixa, ações, mercado internacional e comunicação financeira para empresas e universidades."
+      },
+      {
+        "@type": "Event",
+        "name": "Palestra - José Eduardo Pinheiro",
+        "startDate": "2025-11-01",
+        "endDate": "2025-11-01",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Local a combinar",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "A combinar",
+            "addressCountry": "BR"
+          }
+        },
+        "performer": { "@id": "https://seusite.com/#jepinheiro" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://seusite.com/#contato",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" role="banner" aria-label="Navegação principal">
+    <div class="container nav-inner">
+      <div class="logo">José Eduardo Pinheiro</div>
+
+      <nav class="main-nav" role="navigation" aria-label="Menu principal">
+        <a href="#home">Home</a>
+        <a href="#palestras">Palestras</a>
+        <a href="#autoridade">Sobre</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#biblioteca">Referências</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <button class="mobile-toggle" aria-expanded="false" aria-controls="mobileMenu" id="mobileToggle">☰</button>
+    </div>
+  </header>
+
+  <main id="home" class="hero" role="main">
+    <div class="hero-inner">
+      <div class="hero-copy" tabindex="0">
+        <h1>Palestras que ativam visão estratégica e ação financeira.</h1>
+        <p class="lead">José Eduardo Pinheiro leva ao palco a vivência de quem opera renda fixa, bolsa nacional e internacional todos os dias — traduzindo decisões complexas em orientações práticas para lideranças, colaboradores e estudantes.</p>
+
+        <div class="hero-ctas" role="group" aria-label="Ações principais">
+          <a class="btn btn-primary" href="https://wa.me/5522996022848?text=Ol%C3%A1%2C%20cheguei%20pelo%20site%20do%20Jos%C3%A9%20Eduardo%20Pinheiro.%20Tenho%20interesse%20em%20uma%20palestra%20para%20%5Bnome%20da%20empresa%2Finstitui%C3%A7%C3%A3o%5D.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20formatos%20e%20disponibilidade.%20Obrigado(a)%20-%20%5BSeu%20nome%5D" target="_blank" rel="noopener" aria-label="Fale pelo WhatsApp">
+            Fale pelo WhatsApp
+          </a>
+        </div>
+
+        <div class="chips" role="list">
+          <div class="chip" role="listitem">+2 anos atuando no mercado</div>
+          <div class="chip" role="listitem">+30 leituras de finanças e negócios</div>
+          <div class="chip" role="listitem">+30h de palco para públicos corporativos</div>
+          <div class="chip" role="listitem">Programas avançados da B3 e Ebulição</div>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-hidden="false">
+        <img src="assets/jose-eduardo-hero.jpg" alt="José Eduardo Pinheiro durante apresentação" loading="lazy">
+      </div>
+    </div>
+  </main>
+
+  <section id="autoridade" aria-labelledby="autoridade-title">
+    <div class="container">
+      <h2 id="autoridade-title" class="section-title">Sobre o Especialista</h2>
+      <p class="lead">Pragmático, direto ao ponto e com linguagem acessível: José Eduardo conecta tomada de decisão financeira com comunicação persuasiva, ajudando times a entender os porquês de cada estratégia antes de agir.</p>
+
+      <div class="highlight-card">
+        <figure>
+          <img src="assets/jose-eduardo-profile.jpg" alt="Retrato profissional de José Eduardo Pinheiro" loading="lazy">
+          <figcaption>Visão analítica construída no mercado financeiro e em imersões de alta performance.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/jose-eduardo-stage.jpg" alt="José Eduardo Pinheiro palestrando" loading="lazy">
+          <figcaption>Palestras presenciais que alinham liderança, RH e times operacionais.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/jose-eduardo-workshop.jpg" alt="Workshop conduzido por José Eduardo Pinheiro" loading="lazy">
+          <figcaption>Workshops dinâmicos com exercícios práticos e frameworks prontos para aplicar.</figcaption>
+        </figure>
+      </div>
+
+      <div style="margin-top:24px;color:rgba(255,255,255,0.9);max-width:860px">
+        <p><strong>Bio renovada:</strong> Investidor ativo, com histórico em programas como Ebulição (Rafa Prado) e SDA (Samuel Pereira), mentorias com nomes como Paulo Guedes e vivência em operações com renda fixa, ações nacionais e ETFs globais. José Eduardo cria palestras que unem fundamentos técnicos, mentalidade vencedora e storytelling claro para fazer equipes enxergarem oportunidades e riscos com precisão.</p>
+        <ul style="margin-top:14px;line-height:1.7;color:rgba(255,255,255,0.9)">
+          <li>Renda fixa inteligente para caixa corporativo</li>
+          <li>Estratégias de ações brasileiras e americanas</li>
+          <li>ETFs e diversificação internacional</li>
+          <li>Psicologia financeira aplicada a decisões diárias</li>
+          <li>Pitchs e comunicação financeira de alto impacto</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="palestras" aria-labelledby="palestras-title">
+    <div class="container">
+      <h2 id="palestras-title" class="section-title">Palestras & Formatos</h2>
+      <p class="lead">Experiências personalizadas para conselhos, equipes executivas, universidades e programas internos de educação financeira.</p>
+
+      <div class="cards" aria-live="polite">
+        <article class="card" aria-labelledby="card1-title">
+          <h3 id="card1-title">Investimentos Essenciais para Empresas</h3>
+          <div class="meta">Público: CFO, RH, diretoria · 60–90 min</div>
+          <p>Como desenhar alocações seguras, construir reservas táticas e comunicar decisões com clareza.</p>
+        </article>
+
+        <article class="card" aria-labelledby="card2-title">
+          <h3 id="card2-title">Ações e Narrativas para o Investidor Moderno</h3>
+          <div class="meta">Público: colaboradores e universitários · 60–90 min</div>
+          <p>Framework para identificar empresas, interpretar indicadores e narrar estratégias com confiança.</p>
+        </article>
+
+        <article class="card" aria-labelledby="card3-title">
+          <h3 id="card3-title">ETFs & Diversificação Global</h3>
+          <div class="meta">Público: tesouraria, investidores e escritórios · 45–90 min</div>
+          <p>Como acessar mercados internacionais, equilibrar câmbio e blindar portfólios em diferentes ciclos.</p>
+        </article>
+
+        <article class="card" aria-labelledby="card4-title">
+          <h3 id="card4-title">Psicologia Financeira e Comunicação Persuasiva</h3>
+          <div class="meta">Público: liderança, universidades e programas trainees · 60 min</div>
+          <p>Modelos para vencer vieses, engajar equipes e defender projetos estratégicos com segurança.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" aria-labelledby="portfolio-title">
+    <div class="container">
+      <h2 id="portfolio-title" class="section-title">Portfólio & Certificações</h2>
+      <p class="lead">Imersões, programas e selos que sustentam a autoridade de conteúdo apresentada em cada palco.</p>
+
+      <div class="highlight-card">
+        <figure>
+          <img src="assets/certificados.jpg" alt="Certificados e imersões de José Eduardo" loading="lazy">
+          <figcaption>Ebulição, SDA, cursos avançados da B3 e treinamentos com especialistas de mercado.</figcaption>
+        </figure>
+        <div style="flex:1 1 320px;align-self:center;color:rgba(255,255,255,0.88);font-size:16px">
+          <p>Participação em mais de 100 horas de formações estratégicas com foco em crescimento patrimonial, branding pessoal e educação financeira corporativa.</p>
+          <p style="margin-top:10px">Atuação junto a startups, escolas de negócios e colégios técnicos, consolidando uma metodologia que equilibra dados e narrativa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="biblioteca" aria-labelledby="biblioteca-title">
+    <div class="container">
+      <h2 id="biblioteca-title" class="section-title">Biblioteca & Referências</h2>
+      <p class="lead">Algumas obras que moldam a visão apresentada nas palestras e workshops.</p>
+
+      <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+        <article class="card" style="display:flex;gap:16px;align-items:flex-start">
+          <img src="assets/livro-bazin.jpg" alt="Capa do livro Faça fortuna com ações antes que seja tarde" loading="lazy" style="flex:0 0 94px;height:130px;object-fit:cover;border-radius:10px">
+          <div>
+            <h3 style="font-size:18px;margin-bottom:6px">Faça fortuna com ações antes que seja tarde — Décio Bazin</h3>
+            <p style="font-size:15px;color:rgba(255,255,255,0.85)">Base para leitura de dividendos e seleção de empresas resilientes para portfólios de longo prazo.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" aria-labelledby="galeria-title">
+    <div class="container">
+      <h2 id="galeria-title" class="section-title">Galeria</h2>
+      <div class="gallery" role="list">
+        <div class="item" role="listitem"><img src="assets/jose-eduardo-hero.jpg" alt="José Eduardo apresentando" loading="lazy"></div>
+        <div class="item" role="listitem"><img src="assets/jose-eduardo-stage.jpg" alt="Bastidores de palestra" loading="lazy"></div>
+        <div class="item" role="listitem"><img src="assets/jose-eduardo-workshop.jpg" alt="Workshop conduzido" loading="lazy"></div>
+        <div class="item" role="listitem"><img src="assets/jose-eduardo-profile.jpg" alt="Retrato profissional" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agenda" aria-labelledby="agenda-title">
+    <div class="container">
+      <h2 id="agenda-title" class="section-title">Agenda & Disponibilidade</h2>
+      <p class="lead">Agenda corporativa com vagas limitadas para o próximo trimestre. Garanta a data do seu evento antes do fechamento do calendário.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:16px">
+        <a class="btn btn-primary" href="https://wa.me/5522996022848?text=Ol%C3%A1%2C%20cheguei%20pelo%20site%20do%20Jos%C3%A9%20Eduardo%20Pinheiro.%20Tenho%20interesse%20em%20uma%20palestra%20para%20%5Bnome%20da%20empresa%2Finstitui%C3%A7%C3%A3o%5D.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20formatos%20e%20disponibilidade.%20Obrigado(a)%20-%20%5BSeu%20nome%5D" target="_blank" rel="noopener">Fale pelo WhatsApp</a>
+        <a class="btn btn-secondary" href="mailto:contato@joseeduardopinheiro.com">Escreva por e-mail</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" aria-labelledby="contato-title">
+    <div class="container">
+      <h2 id="contato-title" class="section-title">Contato Rápido</h2>
+      <div class="contact-cta">
+        <p>Prefere falar direto? Envie uma mensagem no WhatsApp ou compartilhe briefing por e-mail para receber proposta personalizada em até 48 horas.</p>
+        <div class="hero-ctas" role="group" aria-label="Opções de contato">
+          <a class="btn btn-primary" href="https://wa.me/5522996022848?text=Ol%C3%A1%2C%20cheguei%20pelo%20site%20do%20Jos%C3%A9%20Eduardo%20Pinheiro.%20Tenho%20interesse%20em%20uma%20palestra%20para%20%5Bnome%20da%20empresa%2Finstitui%C3%A7%C3%A3o%5D.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20formatos%20e%20disponibilidade.%20Obrigado(a)%20-%20%5BSeu%20nome%5D" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-secondary" href="mailto:contato@joseeduardopinheiro.com">Enviar briefing</a>
+        </div>
+        <p>E-mail direto: <a href="mailto:contato@joseeduardopinheiro.com">contato@joseeduardopinheiro.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container foot-inner">
+      <div>&copy; <span id="year"></span> José Eduardo Pinheiro — Todos os direitos reservados.</div>
+      <div style="display:flex;gap:14px;align-items:center">
+        <a href="/termos" style="color:rgba(255,255,255,0.72)">Termos</a>
+        <a href="/privacidade" style="color:rgba(255,255,255,0.72)">Privacidade</a>
+        <a href="https://instagram.com/" aria-label="Instagram" style="color:rgba(255,255,255,0.72)">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const mobileToggle = document.getElementById('mobileToggle');
+    mobileToggle && mobileToggle.addEventListener('click', () => {
+      const nav = document.querySelector('.main-nav');
+      const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', !expanded);
+      if(nav) nav.style.display = expanded ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
